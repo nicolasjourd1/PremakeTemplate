@@ -1,0 +1,7 @@
+MakeFile
+*.make
+
+bin/*
+obj/*
+
+!.gitkeep
