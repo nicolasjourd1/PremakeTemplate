@@ -1,18 +1,21 @@
 -- premake5.lua
 workspace "PremakeTemplate"
-    configurations { "Debug", "Release" }
-
-project "HelloWorld"
-    kind "ConsoleApp"
-    language "C++"
-    targetdir "bin/HelloWorld/%{cfg.buildcfg}"
-
-    files {"src/**.hpp", "src/**.cpp"}
+    architecture "x64"
+    configurations {"Debug", "Release"}
+    startproject "HelloWorld"
 
     filter "configurations:Debug"
-        defines { "DEBUG" }
-        symbols "On"
+       defines { "DEBUG" }
+       runtime "Debug"
+       symbols "On"
 
-    filter "configurations:Release"
-        defines { "RELEASE" }
-        optimize "On"
+   filter "configurations:Release"
+       defines { "RELEASE" }
+       runtime "Release"
+       optimize "On"
+       symbols "On"
+
+OutputDir = "%{cfg.system}-%{cfg.architecture}/%{cfg.buildcfg}"
+
+include "HelloLib/HelloLib.lua"
+include "HelloWorld/HelloWorld.lua"

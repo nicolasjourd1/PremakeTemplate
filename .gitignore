@@ -1,9 +1,4 @@
 .vscode
 
 MakeFile
-*.make
-
-bin/*
-obj/*
-
-!.gitkeep
+build/*
