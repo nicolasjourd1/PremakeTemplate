@@ -11,12 +11,10 @@ A C++ project template using premake.
 Possibly `clang-format`. On VS Code, the C/C++ extension is sufficient.
 
 ## Getting started
-Run `premake5 [action]`, the action depends on the toolset you use. You can then build and run the project. For example, 
-in MSYS2 shell,
+Run `premake5 [action]`, the action depends on the toolset you use. You can then build and run the project. For example,
 
-```console
-Nicolas@pc UCRT64 /c/Projects/PremakeTemplate
-$ premake5 gmake2 && make config=release && build/bin/windows-x86_64/Release/HelloWorld/HelloWorld.exe 
+```sh
+foo@bar:~$ premake5 gmake2 && make config=release && build/bin/windows-x86_64/Release/HelloWorld/HelloWorld.exe 
 Building configurations...
 Running action 'gmake2'...
 Done (37ms).
