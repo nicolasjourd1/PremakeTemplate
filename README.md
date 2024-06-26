@@ -1,20 +1,29 @@
 # Premake Template
-Un projet C++ utilisant premake5. Le projet HelloLib contient une simple fonction `print()` à laquelle HelloWorld fait 
-appel.
+A C++ project template using premake.
 
-## Prérequis
-- [premake](https://premake.github.io/), qui peut être installé sur certains systèmes, ou directement téléchargé dans le répertoire du projet.
-- Une installation C++ (premake est compatible avec [certains IDEs](https://premake.github.io/docs/Using-Premake), des [modules](https://premake.github.io/community/modules/) sont aussi disponibles).
+## Prerequisites
+[`premake`](https://premake.github.io/) and a C++ installation.
+> Premake is a command line utility which reads a scripted definition of a software project and, most commonly, uses it 
+> to generate project files for toolsets like Visual Studio, Xcode, or GNU Make.
 
-Éventuellement `clang-format`, l'extension C/C++ de VS Code suffit sinon. Le fichier `.clang-format` est fondé sur le style Microsoft.
+Possibly `clang-format`. On VS Code, the C/C++ extension is sufficient.
 
-## Configuration, compilation et exécution
-`premake5 gmake2` (ou `vs2022`,`xcode4`...) puis `make config=debug` (ou `release`). La première commande peut varier 
-selon l'installation de premake. La commande pour lancer l'exécutable dépend de la plateforme (par exemple
- `.\build\bin\windows-x86_64\Release\HelloWorld\HelloWorld.exe `)
+## Getting started
+Run `premake5 [action]`, the action depends on the toolset you use. You can then build and run the project. For example, 
+in MSYS2 shell,
 
- ## Ajout de dépendances
- - Pour lier un projet à une bibliothèque : `links { "foo", "bar" }`.
- - Si la bibliothèque n'est pas installée globalement, il est nécessaire de créer des dossiers `lib` et `include` à la racine du 
- projet et d'adapter les fichiers relatifs à premake en conséquence. Il faudra alors ajouter `libdirs {"../lib"}` et 
- `includedirs { "../include"}` dans les fichiers concernés.
+```console
+Nicolas@pc UCRT64 /c/Projects/PremakeTemplate
+$ premake5 gmake2 && make config=release && build/bin/windows-x86_64/Release/HelloWorld/HelloWorld.exe 
+Building configurations...
+Running action 'gmake2'...
+Done (37ms).
+==== Building HelloLib (release) ====
+==== Building HelloWorld (release) ====
+Hello from HelloLib
+```
+
+## Adding dependencies
+`lib` and `include` directories are for adding dependencies. Inside a project premake file add `libdirs { "../lib" }`
+`\libdirs { "../include" }` and `links { "foo", "bar"}` to setup a dependency. The first two additions are not necessary
+if the library is installed "globally".
