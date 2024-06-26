@@ -19,7 +19,11 @@ Building configurations...
 Running action 'gmake2'...
 Done (37ms).
 ==== Building HelloLib (release) ====
+HelloLib.cpp
+Linking HelloLib
 ==== Building HelloWorld (release) ====
+HelloWorld.cpp
+Linking HelloWorld
 Hello from HelloLib
 ```
 
