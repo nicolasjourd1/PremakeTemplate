@@ -1,5 +1,7 @@
 # Premake Template
-A C++ project template using premake.
+A C++ project template using premake. 
+
+*The MIT licence is only used to simplify the use of the template, feel free to delete it*
 
 ## Prerequisites
 [`premake`](https://premake.github.io/) and a C++ installation.
