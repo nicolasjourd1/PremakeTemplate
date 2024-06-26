@@ -13,7 +13,7 @@ Possibly `clang-format`. On VS Code, the C/C++ extension is sufficient.
 ## Getting started
 Run `premake5 [action]`, the action depends on the toolset you use. You can then build and run the project. For example,
 
-```sh
+```console
 foo@bar:~$ premake5 gmake2 && make config=release && build/bin/windows-x86_64/Release/HelloWorld/HelloWorld.exe 
 Building configurations...
 Running action 'gmake2'...
